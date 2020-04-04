@@ -1,0 +1,28 @@
+<%= form_with model: @supply, local: true do |form| %>
+    <p>
+    Name: 
+      <%= form.text_field :Name %>
+    </p>
+  
+    <p>
+    Total:
+      <%= form.text_field:Total %>
+    </p>
+
+    <p>
+    In_used: 
+      <%= form.text_field :In_used %>
+    </p>
+
+    <p>
+    Averge_used: 
+    <%= form.text_field :Averge_used %>
+  </p>
+
+  <p>
+  Availble: 
+    <%= form.text_field :Availble %>
+    </p>
+  
+    <%= form.submit %>
+  <% end %>
