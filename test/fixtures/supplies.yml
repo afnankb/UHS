@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  Name: MyString
+  Total: 1
+  In_used: 1
+  Averge_used: 1
+  Availble: 1
+
+two:
+  user: two
+  Name: MyString
+  Total: 1
+  In_used: 1
+  Averge_used: 1
+  Availble: 1
