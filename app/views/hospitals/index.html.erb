@@ -1,0 +1,7 @@
+<h2> All Hospitals </h2>
+
+
+<% @users.each do |user| %>
+  <%= link_to user.Name, hospital_url(user) %><br/>
+  
+<% end %>
