@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
+    
       resources :hospitals, :supplies
   get 'pages/home'
-  # get 'hospitals/:id', to: 'hospitals#show', as: 'hospitals'
+  get 'hospitals/:id/supplies', to: 'supplies#findById', as: 'usersupplies'
   
   root to: "pages#home"
   
