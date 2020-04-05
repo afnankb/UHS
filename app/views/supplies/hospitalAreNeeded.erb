@@ -1,34 +1,29 @@
-
 <h1> all hospital needed </h1>
-
 <% @users.each do |user| %>
-  <% if  User.find(user.id).supplies.count >= 1%>
-  <%=  user.Name %>
-  <% end %>
+  <% count = 0%>
+  
   <% @supplies.each do |supply| %>
   
   <% if supply.user_id == user.id %>
   
     <% if supply.Name == "ventilator"  &&  supply.Availble <= 25 %> 
-      <%= supply.Name %> 
+<%= supply.Name %> 
+<%count=count+1%>
       <%= supply.Availble %> 
-    <% elsif  supply.Availble <= 100 && supply.Name != "ventilator " %> 
-     <%= supply.Name %>
+<% elsif  supply.Availble <= 100 && supply.Name != "ventilator " %> 
+<%= supply.Name %>
+       <%count=count+1%>
      <%= supply.Availble %>  
-    <% elsif  supply.Name == "N95" && supply.Availble <= 1000 %> 
-    <%= supply.Name %> 
+<% elsif  supply.Name == "N95" && supply.Availble <= 1000 %> 
+<%= supply.Name %> 
+<%count=count+1%>
     <%= supply.Availble %>
-
     
-    
-   <% end %>
-
-
-    <% end %>
+   <% end %>            
+<% end %>
  
 <% end %>
-  
+     <%if count > 0 %>
+     <%= user.Name %> 
+   <% end %>
 <% end %>
-
-
-
