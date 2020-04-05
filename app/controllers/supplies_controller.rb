@@ -1,6 +1,14 @@
 class SuppliesController < ApplicationController
   def index 
-    @supplies = current_user.supplies.all
+    # if params[:current_user]
+    @supplies = Supply.all
+    
+  end
+  def findById
+    @supplies = Supply.where(user_id:params[:id])
+    
+    # Supply.find_by(user_id: 1)
+    # @supplies = @supply.user.all
   end
 
   def show

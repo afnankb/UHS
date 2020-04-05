@@ -1,0 +1,10 @@
+<h1>suplies by id</h1>
+
+<% @supplies.each do |s| %>
+  <tr>
+      <td><%= s.Name %></td>
+     <td> <%= s.Total%></td>
+    <td> <%= s.Availble %></td>
+  </tr>
+<% end %>
+
