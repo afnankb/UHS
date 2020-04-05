@@ -1,8 +1,7 @@
 
 <h1> all hospital needed </h1>
-
 <% @users.each do |user| %>
-  <% if  User.find(user.id).supplies.count >= 1%>
+  <% if  User.find(user.id).supplies.count >= 1 %>
   <%=  user.Name %>
   <% end %>
   <% @supplies.each do |supply| %>
