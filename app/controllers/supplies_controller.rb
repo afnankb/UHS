@@ -20,10 +20,10 @@ class SuppliesController < ApplicationController
   end
 
   def hospitalAreNeeded
-      
     
     @users = User.all
-    @supplies = Supply.order(Availble: :desc).limit(5)
+    @supplies = Supply.all
+    # @supplies = Supply.order(Availble: :asc).limit(5)
        
 end 
 
