@@ -1,0 +1,22 @@
+
+
+
+
+<h1> all hospital needed </h1>
+
+<% @users.each do |user| %>
+  <% @supplies.each do |supply| %>
+  
+  <% if supply.user_id == user.id %>
+     <%=  user.Name %><br/>
+    <%= supply.Availble %>
+    <%= supply.Name %>
+
+    <% end %>
+ 
+<% end %>
+  
+<% end %>
+
+
+

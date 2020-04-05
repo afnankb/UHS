@@ -1,7 +1,7 @@
 class SuppliesController < ApplicationController
   def index 
     # if params[:current_user]
-    @supplies = Supply.all
+    @supplies = current_user.supplies.all
     
   end
   def findById
@@ -18,6 +18,14 @@ class SuppliesController < ApplicationController
       redirect_to supplies_path
     end 
   end
+
+  def hospitalAreNeeded
+      
+    
+    @users = User.all
+    @supplies = Supply.order(Availble: :desc).limit(5)
+       
+end 
 
   def new
     @supply=Supply.new
