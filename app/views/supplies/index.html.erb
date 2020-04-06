@@ -4,6 +4,8 @@
 <% @supplies.each do |supply| %>
   <div>
     <%= link_to supply.Name,supply_url(supply) %>
-    
+    <%= link_to " edit ", edit_supply_url(supply) %>
+    <%= link_to " delete ", supply , :method => :delete %>
+   
   </div>
 <% end %>
