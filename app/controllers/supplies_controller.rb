@@ -12,6 +12,10 @@ class SuppliesController < ApplicationController
   end
 
   def show
+    @findsupply = Supply.find(params[:id])
+    @averg = @findsupply.In_used
+    @averg = (@averg * 7)/ 100 
+    @findsupply = Supply.find(params[:id]).update(Averge_used: @averg)
     @supply = Supply.find(params[:id])
     if  @supply.user != current_user
       flash[:notice] = 'Not allowed!'
@@ -51,7 +55,7 @@ end
   def create
     @supply = Supply.new(supply_params)
     @supply.user = current_user
-
+    
     if @supply.save
       redirect_to @supply
     else
@@ -80,6 +84,6 @@ end
 
   private
   def supply_params
-    params.require(:supply).permit(:Name, :Total, :In_used,:Averge_used,:Availble)
+    params.require(:supply).permit(:Name, :Total, :In_used,:Availble)
   end
 end
