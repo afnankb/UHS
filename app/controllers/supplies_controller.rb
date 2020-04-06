@@ -25,12 +25,13 @@ class SuppliesController < ApplicationController
     #   redirect_to search_url 
     # else  
       @parameter = params[:search]
+      @parameterLoction = params[:location]
       # @results = Supply.all.where( "Name LIKE %:search%", search: "%#{@parameter}%")
       # @results = Supply.all.where( "Name LIKE :search ", search: "%#{@parameter}%")
 
       # @results=Supply.where("Name LIKE ? :search",search: "%#{@parameter}%")
        @results=Supply.all
-       
+       @users = User.all
       # end 
    
   end 
