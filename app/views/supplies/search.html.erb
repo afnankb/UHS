@@ -13,10 +13,11 @@
    
     <% @results.each do |result| %>  
     <% if user.id == result.user_id %>
-        <% if result.Name == @parameter  %>
+        <% if result.Name == @parameter && result.Averge_used < 40 %>
         <%count=count+1%>
         <%= result.Name %>
         <%= result.Availble %>
+        <%= result.Averge_used%>%
         <% end %> 
         <% end %> 
          <% end %>
