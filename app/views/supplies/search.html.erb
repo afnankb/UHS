@@ -1,11 +1,27 @@
 
+<h3>Search Result</h3> 
+  <%= form_tag(search_path, :method => "get") do %>  
+  
+    <%= search_field_tag :search, params[:search], placeholder: "Search" %>  
+   <%= search_field_tag :location, params[:location], placeholder: "location" %> 
+    <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:Name => nil%> 
+<% end %> 
+ <% @users.each do |user| %> 
+  <% count = 0%>
 
-
-<h3>Search Result</h3>  
-
+   <% if user.City == @parameterLoction %>
+   
     <% @results.each do |result| %>  
-        <% if result.Name == @parameter %>
+    <% if user.id == result.user_id %>
+        <% if result.Name == @parameter  %>
+        <%count=count+1%>
         <%= result.Name %><br> 
-        
+        <%= result.Availble %><br> 
         <% end %> 
+        <% end %> 
+         <% end %>
+         <%if count > 0%>
+<%= user.Name %><br> 
+         <% end %>
     <% end %>
+ <% end %>
