@@ -19,6 +19,19 @@ class SuppliesController < ApplicationController
     end 
   end
 
+
+  def search 
+    # if params[:search].blank?  
+    #   redirect_to search_url 
+    # else  
+      @parameter = params[:search]
+      # @results = Supply.all.where( " capitalize(name) LIKE :search", search: "%#{@parameter}%")
+      @results = Supply.all.where( "Name LIKE :search ", search: "%#{@parameter}%")
+    
+      # end 
+   
+  end 
+
   def hospitalAreNeeded
     
     @users = User.all

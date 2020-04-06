@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'supplies/new'
   # get 'supplies/edit' 
   get 'supplies/requsted' , to: 'supplies#hospitalAreNeeded' , as: 'hospital_in_need'
-
+  get 'supplies/search' , to:'supplies#search' , as: 'search'
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
