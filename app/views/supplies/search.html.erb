@@ -15,13 +15,13 @@
     <% if user.id == result.user_id %>
         <% if result.Name == @parameter  %>
         <%count=count+1%>
-        <%= result.Name %><br> 
-        <%= result.Availble %><br> 
+        <%= result.Name %>
+        <%= result.Availble %>
         <% end %> 
         <% end %> 
          <% end %>
          <%if count > 0%>
-<%= user.Name %><br> 
+          <%= user.Name %><br> 
          <% end %>
     <% end %>
  <% end %>
