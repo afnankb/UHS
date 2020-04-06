@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  # get 'supplies/index'
-  # get 'supplies/show'
-  # get 'supplies/new'
-  # get 'supplies/edit' 
+ 
+
+  delete 'supplies/:id' , to:'supplies#destroy' 
   get 'supplies/requsted' , to: 'supplies#hospitalAreNeeded' , as: 'hospital_in_need'
   get 'supplies/search' , to:'supplies#search' , as: 'search'
+
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
     
-      resources :hospitals, :supplies
+      resources :hospitals, :supplies 
   get 'pages/home'
   get 'hospitals/:id/supplies', to: 'supplies#findById', as: 'usersupplies'
   
