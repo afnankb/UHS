@@ -73,7 +73,7 @@ end
   end
 
   def destroy
-    @supply.destroy
+    Supply.find(params[:id]).destroy
     redirect_to supplies_path
   end
 
