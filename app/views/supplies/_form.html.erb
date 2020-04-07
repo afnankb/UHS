@@ -1,32 +1,36 @@
+
+<div class= " card p-5 m-5 w-50">
 <%= form_with model: @supply, local: true do |form| %>
     <p>
     Name: 
+    <span class= "p-4">
       <%= form.text_field :Name %>
+      </span>
     </p>
   
     <p>
-    Total:
-      <%= form.text_field:Total %>
+    Total   :
+    <span class= "p-4">
+      <%= form.text_field:Total  %>
+      </span>
     </p>
 
     <p>
     In_used: 
+    <span class= "p-3">
       <%= form.text_field :In_used %>
+      </span>
     </p>
-
-    <%
-=begin%>
- <p>
-    Averge_used: 
-    <%= form.text_field :Averge_used %>
-  </p> 
-<%
-=end%>
 
   <p>
   Availble: 
+  <span class= "p-3">
     <%= form.text_field :Availble %>
+    </span>
     </p>
+      <button class="btn font thead-dark" type="submit" style="background-color: #343a40 ; color: #fff;" >Submit</button>
+
   
-    <%= form.submit %>
   <% end %>
+</div>
+

@@ -35,12 +35,12 @@
     <tr>
       <td><%= result.Name %></td>
     <td> <%= result.Availble %></td>
-     <td> <%=result.Averge_used %></td>
+     <td> <%=result.Averge_used %>%</td>
            <%if count > 0%>
           <td> <%= user.Name %></td>
            <td> <%= user.City %></td>
-           <td> <%= user.Phone_Number %> <i class="fas fa-phone"></i></td> 
-           <td> <%= user.email %> <i class="fas fa-file"></i></td> 
+           <td> <i class="fas fa-phone"></i><%= user.Phone_Number %> </td> 
+           <td> <i class="fas fa-file"></i><%= user.email %> </td> 
          <% end %>
     </tr>  
     <% end %>
