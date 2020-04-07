@@ -1,7 +1,8 @@
 <h1>Home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 <% if user_signed_in? %>
   <p>
   Welcome <%= current_user.email %>
 </p>
 <% end %>
+
+<li><%= link_to "log_in",new_user_session_path %></li>
