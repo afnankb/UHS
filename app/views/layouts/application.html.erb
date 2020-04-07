@@ -23,6 +23,64 @@
          Welcome <%= current_user.Name %>
       </p>
       <% end %>
+
+
+      
+      <nav class="navbar navbar-light navbar-expand-sm" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="#">UHS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? && current_user.id == 1  %>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= hospitals_path %>">Hospitals<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="<%= hospital_in_need_url %>">In_Need</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= search_url %>">Serach</a>
+      </li>
+        <% end %> 
+
+        <% if user_signed_in? && current_user.id > 1  %>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= supplies_path %>">Supplies<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= new_supply_path %>">Add_Supply</a>
+      </li>
+      <% end %> 
+       
+
+          <% if user_signed_in? %>
+            <li class="nav-item">
+            <a class="nav-link " href="<%= destroy_user_session_path %>", data-method="delete" >Log_Out</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+            <a class="nav-link " href="<%= new_user_session_path %>" >log_In</a>
+            </li>
+         <% end %>
+
+        </ul>
+      </div>
+
+
+
+
+
+      </nav>
+
+
+
+
+
+
+
       <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>

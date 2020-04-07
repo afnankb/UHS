@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
- 
+  # devise_scope :user do
+  #   root to: "users/sessions#new" 
+  # end
 
   delete 'supplies/:id' , to:'supplies#destroy' 
   get 'supplies/requsted' , to: 'supplies#hospitalAreNeeded' , as: 'hospital_in_need'
@@ -13,7 +15,10 @@ Rails.application.routes.draw do
   get 'pages/home'
   get 'hospitals/:id/supplies', to: 'supplies#findById', as: 'usersupplies'
   
-  root to: "pages#home"
+
+root "pages#home"
+
+
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
