@@ -1,29 +1,59 @@
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<h3>Search Result</h3> 
-  <%= form_tag(search_path, :method => "get") do %>  
-  
+<div class="p-5 ">
+  <%= form_tag(search_path, :method => "get" ) do %>  
     <%= search_field_tag :search, params[:search], placeholder: "Search" %>  
    <%= search_field_tag :location, params[:location], placeholder: "location" %> 
-    <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:Name => nil%> 
-<% end %> 
- <% @users.each do |user| %> 
-  <% count = 0%>
+    <button class="btn font thead-dark" type="submit" style="background-color: #343a40 ; color: #fff;" >Search</button>
 
-   <% if user.City == @parameterLoction %>
-   
-    <% @results.each do |result| %>  
-    <% if user.id == result.user_id %>
+
+<% end %> 
+
+</div>
+
+<div class="m-5">
+<table class="table text-center font ">
+  <thead class="thead-dark font ">
+    <th scope="col">Name</th>
+      <th scope="col">Availble</th>
+      <th scope="col">Averge_used</th>
+      <th scope="col">Hospital_Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Phone_Number</th>
+        <th scope="col">email</th>
+    </tr>
+  </thead>
+  <tbody>
+ <% @users.each do |user| %> 
+ <% count = 0%>
+  <% if user.City == @parameterLoction %>
+  <% @results.each do |result| %>  
+  <% if user.id == result.user_id %>
         <% if result.Name == @parameter && result.Averge_used < 40 %>
         <%count=count+1%>
-        <%= result.Name %>
-        <%= result.Availble %>
-        <%= result.Averge_used%>%
-        <% end %> 
-        <% end %> 
+    <tr>
+      <td><%= result.Name %></td>
+    <td> <%= result.Availble %></td>
+     <td> <%=result.Averge_used %></td>
+           <%if count > 0%>
+          <td> <%= user.Name %></td>
+           <td> <%= user.City %></td>
+           <td> <%= user.Phone_Number %> <i class="fas fa-phone"></i></td> 
+           <td> <%= user.email %> <i class="fas fa-file"></i></td> 
          <% end %>
-         <%if count > 0%>
-<%= user.Name %><br> 
-<%= user.Phone_Number %><br>  
-         <% end %>
+    </tr>  
     <% end %>
- <% end %>
+        <% end %> 
+         <% end %>
+          <% end %>
+           <% end %>
+  </tbody>
+</table>
+</div>
+
+
+
+
+ 
+ 
