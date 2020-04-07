@@ -1,7 +1,29 @@
-<h2> All Hospitals </h2>
 
+<head> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+ </head>
 
+<div class="p-4">
+<h2 class="font"> All Hospitals </h2>
+</div>  
+
+<div class="card-columns p-4">
 <% @users.each do |user| %>
-  <%= link_to user.Name, hospital_url(user) %><br/>
-  
+
+    <div class="card text-center " style="max-width: 25rem;" >
+  <div class="card-body">
+    <h5 class="card-title font "><%= user.Name%></h5>
+ <p class="card-text font "><%= user.City%></p>
+
+    <a href="<%= hospital_url(user) %>" class="btn font" style="background-color: #c6e4fb;"> details </a>
+  </div>
+</div>
+
 <% end %>
+
+</div>    
+
+
+
+
+

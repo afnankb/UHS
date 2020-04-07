@@ -1,6 +1,17 @@
-<div>Name: <%= @user.Name%> </div>
-<div>City: <%= @user.City %> </div>
-<div>phone: <%= @user.Phone_Number %> </div>
- 
-<%= link_to "Supplies", usersupplies_path %>
 
+
+
+<div class="p-5">
+<div class="card w-20 text-center">
+  <div class="card-body">
+    <h5 class="card-title font"><%= @user.Name%> </h5>
+    <p class="card-text font"> <%= @user.City %></p>
+     <p class="card-text font"> <%= @user.NA %></p>
+         <p class="card-text font"> <%= @user.Category %></p>
+    <p class="card-text font"> <%= @user.Phone_Number %></p>
+    <p class="card-text font"> <%= @user.email %></p>
+ <a href="<%= usersupplies_path %>" class="btn font" style="background-color: #c6e4fb;"> Supplies </a>
+
+  </div>
+</div> 
+ </div>

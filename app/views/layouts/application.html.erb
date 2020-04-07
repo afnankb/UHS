@@ -10,22 +10,7 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-   <% if current_user.id == 1 %>
-  <%= link_to 'hospital in need ',hospital_in_need_url %>
-   <%= link_to ' serach ',search_url %>
-   
-    <% end %>
-      <% end %>
-      <% if user_signed_in? %>
-       <p>
-         Welcome <%= current_user.Name %>
-      </p>
-      <% end %>
-
-
-      
+  
       <nav class="navbar navbar-light navbar-expand-sm" style="background-color: #e3f2fd;">
       <a class="navbar-brand" href="#">UHS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
