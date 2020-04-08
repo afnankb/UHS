@@ -1,5 +1,7 @@
-<h2>Sign up</h2>
+<div style="background-color: #fafbfc;">
+<h2 class=" font pl-5">Sign up</h2>
 
+<div class= " card p-5 m-5 w-50">
 <%= form_with model: @user , local: true , as: resource_name, url: registration_path(resource_name)  do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -45,11 +47,13 @@
     <%= f.label :National_Adress  %><br />
     <%= f.text_field :NA,  autocomplete: "NA" %>
   </div>
-
+   <br/>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <button class="btn font thead-dark" type="submit" style="background-color: #343a40 ; color: #fff;" >Sing Up</button>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>

@@ -1,19 +1,17 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+<div style="background-color: #fafbfc;">
 <div class="p-5 ">
   <%= form_tag(search_path, :method => "get" ) do %>  
     <%= search_field_tag :search, params[:search], placeholder: "Search" %>  
    <%= search_field_tag :location, params[:location], placeholder: "location" %> 
     <button class="btn font thead-dark" type="submit" style="background-color: #343a40 ; color: #fff;" >Search</button>
-
-
 <% end %> 
 
 </div>
 
 <div class="m-5">
-<table class="table text-center font ">
+<table class="table text-center font " style="background-color: #ffff;">
   <thead class="thead-dark font ">
     <th scope="col">Name</th>
       <th scope="col">Availble</th>
@@ -51,7 +49,7 @@
   </tbody>
 </table>
 </div>
-
+</div>
 
 
 

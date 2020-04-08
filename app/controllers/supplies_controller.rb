@@ -1,6 +1,5 @@
 class SuppliesController < ApplicationController
   def index 
-    # if params[:current_user]
     @supplies = current_user.supplies.all
     
   end
@@ -12,9 +11,6 @@ class SuppliesController < ApplicationController
     flash[:notice] = 'Not allowed!'
     redirect_to supplies_path
   end
-    
-    # Supply.find_by(user_id: 1)
-    # @supplies = @supply.user.all
   end
 
   def show
@@ -30,18 +26,9 @@ class SuppliesController < ApplicationController
   end
 
 
-  def search 
-    # if params[:search].blank?  
-    #   redirect_to search_url 
-    # else  
-    
+  def search  
       @parameter = params[:search]
       @parameterLoction = params[:location]
-
-      # @results = Supply.all.where( "Name LIKE %:search%", search: "%#{@parameter}%")
-      # @results = Supply.all.where( "Name LIKE :search ", search: "%#{@parameter}%")
-
-      # @results=Supply.where("Name LIKE ? :search",search: "%#{@parameter}%")
       if current_user.id == 1
        @results=Supply.all
        @users = User.all
@@ -49,15 +36,12 @@ class SuppliesController < ApplicationController
         flash[:notice] = 'Not allowed!'
         redirect_to supplies_path
       end
-      # end 
-   
   end 
 
   def hospitalAreNeeded
     if current_user.id == 1
     @users = User.all
     @supplies = Supply.all
-    # @supplies = Supply.order(Availble: :asc).limit(5)
   else 
     flash[:notice] = 'Not allowed!'
     redirect_to supplies_path
