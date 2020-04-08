@@ -5,7 +5,13 @@ class SuppliesController < ApplicationController
     
   end
   def findById
+  if current_user.id == 1
     @supplies = Supply.where(user_id:params[:id])
+
+  else 
+    flash[:notice] = 'Not allowed!'
+    redirect_to supplies_path
+  end
     
     # Supply.find_by(user_id: 1)
     # @supplies = @supply.user.all
@@ -28,6 +34,7 @@ class SuppliesController < ApplicationController
     # if params[:search].blank?  
     #   redirect_to search_url 
     # else  
+    
       @parameter = params[:search]
       @parameterLoction = params[:location]
 
@@ -35,23 +42,31 @@ class SuppliesController < ApplicationController
       # @results = Supply.all.where( "Name LIKE :search ", search: "%#{@parameter}%")
 
       # @results=Supply.where("Name LIKE ? :search",search: "%#{@parameter}%")
+      if current_user.id == 1
        @results=Supply.all
        @users = User.all
-      
+      else 
+        flash[:notice] = 'Not allowed!'
+        redirect_to supplies_path
+      end
       # end 
    
   end 
 
   def hospitalAreNeeded
-    
+    if current_user.id == 1
     @users = User.all
     @supplies = Supply.all
     # @supplies = Supply.order(Availble: :asc).limit(5)
-       
+  else 
+    flash[:notice] = 'Not allowed!'
+    redirect_to supplies_path
+  end  
 end 
 
   def new
     @supply=Supply.new
+    
   end
   
   def create
@@ -66,8 +81,12 @@ end
     end 
   end
 
-  def edit
+  def edit 
     @supply = Supply.find(params[:id])
+    if  @supply.user != current_user
+      flash[:notice] = 'Not allowed!'
+      redirect_to supplies_path
+    end
   end
   
 
@@ -78,7 +97,7 @@ end
     redirect_to supply
   end
 
-  def destroy
+  def destroy 
     Supply.find(params[:id]).destroy
     redirect_to supplies_path
   end
