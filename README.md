@@ -1,24 +1,47 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# United Hospitals System
 
-Things you may want to cover:
 
-* Ruby version
+## Overview
 
-* System dependencies
+UHS is a system to help all the Hospitals in Saudi Arabia to collaborate with each other, in term of medical supplies. This website provide communcations thougout all hospitals to manage all medical equipments specially in COVID-19 period of time.
 
-* Configuration
 
-* Database creation
+## List of technologies used
 
-* Database initialization
+* Ruby 
+* Ruby on rails 
+* postgresql
+* Heroku
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## User story
 
-* Deployment instructions
 
-* ...
+* as admin can see all supplies of all hospitals
+* as admin can see all hospitals .
+* as admin can see all hospitals that need supplies.
+* as admin can search by the suppliy name and city in all hospitals
+* as admin have to inform the hospital by phone call .
+* as admin have to sign-in and log-out
+* as hospital can sign-in and log-ou
+* as hospital can rigister in the system .
+* as hospital can see all his supplies .
+* as hospital can add new supply .
+
+
+## ERD
+
+![ERD](./UHS.png)
+
+## Wireframe 
+
+
+## demo 
+
+![ERD](./home.png)
+![ERD](./admin.png)
+![ERD](./hospital.png)
+
+
+
