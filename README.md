@@ -35,13 +35,15 @@ UHS is a system to help all the Hospitals in Saudi Arabia to collaborate with ea
 ![ERD](./UHS.png)
 
 ## Wireframe 
-
+![Home_Wireframe](./home_page_wireframe.PNG)
+![Admin_Wireframe](./Admin_page_Hospital.PNG)
+![Hospital_Wireframe](./User_page_Wir.PNG)
 
 ## demo 
 
-![ERD](./home.png)
-![ERD](./admin.png)
-![ERD](./hospital.png)
+![Home](./home.png)
+![Admin](./admin.png)
+![Hospital](./hospital.png)
 
 
 
