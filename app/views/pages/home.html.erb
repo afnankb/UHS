@@ -1,8 +1,24 @@
-<h1>Home</h1>
+<div style="background-color: #fafbfc;">
 <% if user_signed_in? %>
-  <p>
-  Welcome <%= current_user.email %>
+  <p class="font pl-2 mt-0" >
+  Welcome <span class= "font-weight-bold"> <%= current_user.Name %></span>
 </p>
 <% end %>
+ 
 
-<li><%= link_to "log_in",new_user_session_path %></li>
+<h1 class="font text-center" >United Hospitals System</h1>
+<div class=" text-center rounded mx-auto d-block">
+<img class=" w-25 " src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/United_we_stand.svg/1200px-United_we_stand.svg.png " alt="UHS image"  />
+</div>
+<div class="p-5 m-5 text-center font card">
+<div class="card-body">
+<h3 class="card-title">Our Mission</h3>
+<p class="card-text">UHS is a system to help all the Hospitals in Saudi Arabia to collaborate with each other, in term of medical supplies.
+This website provide communcations thougout all hospitals to manage all medical equipments specially in COVID-19 period of time. </p>
+</div>
+</div>
+<br/><br/><br/><br/><br/>
+</div>
+
+
+

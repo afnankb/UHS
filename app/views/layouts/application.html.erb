@@ -8,10 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body >
   
       <nav class="navbar navbar-light navbar-expand-sm" style="background-color: #e3f2fd;">
-      <a class="navbar-brand" href="#">UHS</a>
+      <a class="navbar-brand" href="<%= root_path %>">UHS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,21 +52,11 @@
 
         </ul>
       </div>
-
-
-
-
-
       </nav>
 
-
-
-
-
-
-
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+      <p class="notice p-0 m-0" style="background-color: #fafbfc;"><%= notice %></p>
+       <p class="alert p-0 m-0" style="background-color: #fafbfc;"><%= alert %></p>
     <%= yield %>
+   
   </body>
 </html>
